@@ -21,7 +21,7 @@ export function SplineHeroScene() {
   const [loaded, setLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Safely remove only the "Built with Spline" watermark link/badge continuously
+  // Safely remove only the "Built with Spline" watermark link/badge
   useEffect(() => {
     const hideBadge = () => {
       const links = document.querySelectorAll(
@@ -29,36 +29,13 @@ export function SplineHeroScene() {
       );
       links.forEach((a) => {
         (a as HTMLElement).style.setProperty("display", "none", "important");
-        (a as HTMLElement).style.setProperty("opacity", "0", "important");
-        (a as HTMLElement).style.setProperty("visibility", "hidden", "important");
-        (a as HTMLElement).style.setProperty("pointer-events", "none", "important");
-        (a as HTMLElement).style.setProperty("height", "0px", "important");
-        (a as HTMLElement).style.setProperty("width", "0px", "important");
       });
     };
 
     hideBadge();
-    const timer = setInterval(hideBadge, 150);
+    const timer = setInterval(hideBadge, 250);
     return () => clearInterval(timer);
   }, [loaded]);
-
-  // Prevent wheel events over the robot from zooming the 3D camera or freezing page scroll
-  useEffect(() => {
-    const container = containerRef.current;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      // Prevent Spline Three.js OrbitControls from consuming the wheel event to zoom camera
-      e.stopPropagation();
-      // Scroll the window naturally with zero lag
-      window.scrollBy({ top: e.deltaY, behavior: "auto" });
-    };
-
-    container.addEventListener("wheel", handleWheel, { capture: true, passive: false });
-    return () => {
-      container.removeEventListener("wheel", handleWheel, { capture: true });
-    };
-  }, []);
 
   const handleSplineLoad = (splineApp: any) => {
     setLoaded(true);
@@ -75,12 +52,6 @@ export function SplineHeroScene() {
       ref={containerRef}
       className="spline-container relative flex w-full max-w-7xl flex-col items-center justify-center select-none overflow-hidden"
     >
-      {/* 
-        Bigger hero presence:
-        - Scale up to fill the screen
-        - Height expanded to 750px - 940px
-        - transform-gpu for lag-free 60fps rendering
-      */}
       <div className="relative h-[750px] sm:h-[860px] lg:h-[940px] w-full flex items-center justify-center transform-gpu">
         {!loaded && (
           <div className="absolute inset-0 z-10 flex items-center justify-center text-zinc-500">
@@ -91,7 +62,7 @@ export function SplineHeroScene() {
           </div>
         )}
 
-        <div className="h-full w-full flex items-center justify-center transform scale-110 sm:scale-115 lg:scale-120 transition-transform duration-300">
+        <div className="h-full w-full flex items-center justify-center transform scale-110 sm:scale-115 lg:scale-120 will-change-transform">
           <Spline
             scene="https://prod.spline.design/V1KrcrPjNNi8CcuO/scene.splinecode"
             onLoad={handleSplineLoad}
