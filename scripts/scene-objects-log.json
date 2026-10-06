@@ -1,0 +1,462 @@
+[
+  {
+    "name": "Camera 2",
+    "type": "PerspectiveCamera"
+  },
+  {
+    "name": "Point Light",
+    "type": "PointLight"
+  },
+  {
+    "name": "logo",
+    "type": "Empty"
+  },
+  {
+    "name": "Shape 0",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 1",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Shape 6",
+    "type": "Mesh"
+  },
+  {
+    "name": "Bot",
+    "type": "Empty"
+  },
+  {
+    "name": "Top part",
+    "type": "Empty"
+  },
+  {
+    "name": "Head",
+    "type": "Empty"
+  },
+  {
+    "name": "Head 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Neck",
+    "type": "Empty"
+  },
+  {
+    "name": "Cube",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cylinder 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group 3",
+    "type": "Empty"
+  },
+  {
+    "name": "Group 2",
+    "type": "Empty"
+  },
+  {
+    "name": "Cylinder 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Cylinder 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cylinder",
+    "type": "Mesh"
+  },
+  {
+    "name": "Hand Instance",
+    "type": "Instance"
+  },
+  {
+    "name": "Hand LEFT",
+    "type": "Empty"
+  },
+  {
+    "name": "arm",
+    "type": "Empty"
+  },
+  {
+    "name": "elbow",
+    "type": "Empty"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Rectangle 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "forearm",
+    "type": "Empty"
+  },
+  {
+    "name": "Hand",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 6",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Hand",
+    "type": "Component"
+  },
+  {
+    "name": "Hand LEFT",
+    "type": "Empty"
+  },
+  {
+    "name": "arm",
+    "type": "Empty"
+  },
+  {
+    "name": "elbow",
+    "type": "Empty"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Rectangle 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "forearm",
+    "type": "Empty"
+  },
+  {
+    "name": "Hand",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 6",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Body",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Ellipse",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Ellipse",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle",
+    "type": "Mesh"
+  },
+  {
+    "name": "Bottom",
+    "type": "Empty"
+  },
+  {
+    "name": "Group 4",
+    "type": "Empty"
+  },
+  {
+    "name": "Group 2",
+    "type": "Empty"
+  },
+  {
+    "name": "Cylinder 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Cylinder 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Leg Left Instance",
+    "type": "Instance"
+  },
+  {
+    "name": "femur",
+    "type": "Empty"
+  },
+  {
+    "name": "Cube 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 9",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 10",
+    "type": "Mesh"
+  },
+  {
+    "name": "shin",
+    "type": "Empty"
+  },
+  {
+    "name": "Foot",
+    "type": "Empty"
+  },
+  {
+    "name": "Cube 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 12",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 11",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 8",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 7",
+    "type": "Mesh"
+  },
+  {
+    "name": "Leg Left",
+    "type": "Component"
+  },
+  {
+    "name": "femur",
+    "type": "Empty"
+  },
+  {
+    "name": "Cube 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 9",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 10",
+    "type": "Mesh"
+  },
+  {
+    "name": "shin",
+    "type": "Empty"
+  },
+  {
+    "name": "Foot",
+    "type": "Empty"
+  },
+  {
+    "name": "Cube 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Cube 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 12",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 11",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse 2",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 8",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 7",
+    "type": "Mesh"
+  },
+  {
+    "name": "Pelvic",
+    "type": "Empty"
+  },
+  {
+    "name": "Group 2",
+    "type": "Empty"
+  },
+  {
+    "name": "Rectangle 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group",
+    "type": "Empty"
+  },
+  {
+    "name": "Rectangle 5",
+    "type": "Mesh"
+  },
+  {
+    "name": "Ellipse",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle 4",
+    "type": "Mesh"
+  },
+  {
+    "name": "Group 3",
+    "type": "Empty"
+  },
+  {
+    "name": "Rectangle 3",
+    "type": "Mesh"
+  },
+  {
+    "name": "Rectangle",
+    "type": "Mesh"
+  }
+]
