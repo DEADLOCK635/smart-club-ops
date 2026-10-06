@@ -21,17 +21,22 @@ export function SplineHeroScene() {
   const [loaded, setLoaded] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Safely remove only the "Built with Spline" watermark link/badge
+  // Safely remove only the "Built with Spline" watermark link/badge without perpetual setInterval
   useEffect(() => {
+    let iterations = 0;
     const hideBadge = () => {
       const links = document.querySelectorAll('a[href*="spline.design"]');
       links.forEach((a) => {
         (a as HTMLElement).style.setProperty("display", "none", "important");
       });
+      iterations++;
+      if (iterations > 15) {
+        clearInterval(timer);
+      }
     };
 
     hideBadge();
-    const timer = setInterval(hideBadge, 250);
+    const timer = setInterval(hideBadge, 300);
     return () => clearInterval(timer);
   }, [loaded]);
 
@@ -50,13 +55,7 @@ export function SplineHeroScene() {
       ref={containerRef}
       className="spline-container relative flex w-full max-w-7xl flex-col items-center justify-center select-none overflow-hidden"
     >
-      {/* 
-        Bigger hero presence:
-        - Scale up to fill the screen
-        - Height expanded to 750px - 950px
-        - transform-gpu and will-change-transform for lag-free 60fps rendering
-      */}
-      <div className="relative h-[720px] sm:h-[840px] lg:h-[920px] w-full flex items-center justify-center transform-gpu">
+      <div className="relative h-[680px] sm:h-[780px] lg:h-[860px] w-full flex items-center justify-center transform-gpu">
         {!loaded && (
           <div className="absolute inset-0 z-10 flex items-center justify-center text-zinc-500">
             <div className="flex items-center gap-2 font-mono text-xs">
@@ -66,7 +65,7 @@ export function SplineHeroScene() {
           </div>
         )}
 
-        <div className="h-full w-full flex items-center justify-center transform scale-110 sm:scale-115 lg:scale-120 transition-transform duration-500 will-change-transform">
+        <div className="h-full w-full flex items-center justify-center">
           <Spline
             scene="https://prod.spline.design/V1KrcrPjNNi8CcuO/scene.splinecode"
             onLoad={handleSplineLoad}
