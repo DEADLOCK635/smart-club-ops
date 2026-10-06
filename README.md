@@ -105,12 +105,9 @@ npm run start
 
 ## 6. Deployment URL & Hosting Guide
 
-- **Live Production URL:** Deployable with 1-click on [Vercel](https://vercel.com) or [Netlify](https://netlify.com).
-- **Vercel Deployment Steps:**
-  1. Push this repository to GitHub.
-  2. Import repository into Vercel.
-  3. Framework Preset: **Next.js** (Build command: `npm run build`, Output directory: `.next`).
-  4. Deploy!
+- **Live Production URL:** [https://smart-club-ops.vercel.app](https://smart-club-ops.vercel.app)
+- **Organizer Ops Console:** [https://smart-club-ops.vercel.app/ops](https://smart-club-ops.vercel.app/ops)
+- **Deployment Platform:** Vercel (Edge-optimized Next.js 16 production build)
 
 ---
 
