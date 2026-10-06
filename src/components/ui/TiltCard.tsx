@@ -10,7 +10,7 @@ import { cn } from "@/lib/utils";
 export function TiltCard({
   children,
   className,
-  maxTilt = 8,
+  maxTilt = 10,
   glare = true,
 }: {
   children: React.ReactNode;
@@ -19,7 +19,10 @@ export function TiltCard({
   glare?: boolean;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
-  const glareRef = useRef<HTMLDivElement>(null);
+  const [transformStyle, setTransformStyle] = useState<string>(
+    "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+  );
+  const [glarePos, setGlarePos] = useState({ x: 50, y: 50, opacity: 0 });
   const rafId = useRef<number | null>(null);
 
   const handlePointerMove = useCallback(
@@ -40,29 +43,33 @@ export function TiltCard({
         const rotX = ((0.5 - y) * (maxTilt * 2)).toFixed(2);
         const rotY = ((x - 0.5) * (maxTilt * 2)).toFixed(2);
 
-        card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-2px)`;
+        setTransformStyle(
+          `perspective(1000px) rotateX(${rotX}deg) rotateY(${rotY}deg) scale3d(1.02, 1.02, 1.02)`
+        );
 
-        if (glareRef.current) {
-          glareRef.current.style.opacity = "0.15";
-          glareRef.current.style.background = `radial-gradient(350px circle at ${Math.round(x * 100)}% ${Math.round(y * 100)}%, rgba(255, 255, 255, 0.4), transparent 60%)`;
+        if (glare) {
+          setGlarePos({
+            x: Math.round(x * 100),
+            y: Math.round(y * 100),
+            opacity: 0.18,
+          });
         }
       });
     },
-    [maxTilt]
+    [maxTilt, glare]
   );
 
   const handlePointerLeave = useCallback(() => {
     if (rafId.current !== null) {
       cancelAnimationFrame(rafId.current);
     }
-    const card = cardRef.current;
-    if (card) {
-      card.style.transform = "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)";
+    setTransformStyle(
+      "perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)"
+    );
+    if (glare) {
+      setGlarePos((p) => ({ ...p, opacity: 0 }));
     }
-    if (glareRef.current) {
-      glareRef.current.style.opacity = "0";
-    }
-  }, []);
+  }, [glare]);
 
   return (
     <div
@@ -70,8 +77,9 @@ export function TiltCard({
       onPointerMove={handlePointerMove}
       onPointerLeave={handlePointerLeave}
       style={{
-        transform: "perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)",
-        transition: "transform 200ms cubic-bezier(0.16, 1, 0.3, 1)",
+        transform: transformStyle,
+        transition: "transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1)",
+        transformStyle: "preserve-3d",
         willChange: "transform",
       }}
       className={cn("group relative h-full rounded-3xl", className)}
@@ -79,9 +87,11 @@ export function TiltCard({
       {children}
       {glare && (
         <div
-          ref={glareRef}
           aria-hidden
-          className="pointer-events-none absolute inset-0 rounded-[inherit] opacity-0 transition-opacity duration-300"
+          className="pointer-events-none absolute inset-0 rounded-[inherit] transition-opacity duration-300"
+          style={{
+            background: `radial-gradient(400px circle at ${glarePos.x}% ${glarePos.y}%, rgba(255, 255, 255, ${glarePos.opacity}), transparent 60%)`,
+          }}
         />
       )}
     </div>
